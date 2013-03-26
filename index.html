@@ -296,6 +296,7 @@ rAF(function() {
                       <li>Loop through them, creating new objects</li>
                       <li>Have load event listeners increment loaded count</li>
                       <li>When loaded (+ errors) === total, you're done!</li>
+                      <li>Keep track of objects made for later use</li>
                     </ol>
                     <div>
                       <img src="down_arrow.png" class="navigate-down more-arrow" title="Continue down"></img>
@@ -307,7 +308,7 @@ rAF(function() {
 					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">var imageCount = 0;
 var images     = [ 'map.png', 'avatar.png' ];
 
-// Some function that updates a progress bar
+// Some imaginary function that updates a progress bar
 showLoading( imageCount, images.length );		  
 
 // The callback each image will call when fully loaded
@@ -317,8 +318,8 @@ var resourceOnLoad = function() {
 
     // We're finished
     if ( imageCount == images.length ) {
-        // Some function that starts the game
-        playCallback();
+        // Some imaginary function that starts the game
+        startGame();
     }
 };
 
@@ -327,7 +328,8 @@ for ( var i = 0; i < images.length; i++ ) {
     img.addEventListener('load', resourceOnLoad);
     img.src = images[i];
 
-    // Make the asset available in some global data structure
+    // Some imaginary function that makes the asset
+    // available in a global data structure
     addAsset( images[i], img );
 }</code></pre>
                   </section>
