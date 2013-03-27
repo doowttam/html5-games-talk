@@ -30,11 +30,11 @@ var EXAMPLES = (function(win, doc){ return {
         doc.getElementById('raw_key_example').addEventListener('keydown', function() {
             count++;
             EXAMPLES.drawCircle(canvas, context, count);
-        });
+        }, false);
         doc.getElementById('raw_key_example').addEventListener('keyup', function() {
             count = 0;
             context.clearRect(0, 0, canvas.width, canvas.height);
-        });
+        }, false);
     },
     
     initAsyncKeyExample: function() {
@@ -46,12 +46,12 @@ var EXAMPLES = (function(win, doc){ return {
 
         doc.getElementById('async_key_example').addEventListener('keydown', function() {
             keyPressed = true;
-        });
+        }, false);
         doc.getElementById('async_key_example').addEventListener('keyup', function() {
             keyPressed = false;
             count = 0;
             context.clearRect(0, 0, canvas.width, canvas.height);
-        });
+        }, false);
         
         EXAMPLES.rAF(function() {
             if ( keyPressed ) {
@@ -104,7 +104,7 @@ var EXAMPLES = (function(win, doc){ return {
 
             // Slice and scale, generally helpful
             context.drawImage( img, 0, 0, 50, 90, 135, 75, 100, 180);
-        });
+        }, false);
 
         img.src = 'detective.png';
     },
@@ -126,7 +126,7 @@ var EXAMPLES = (function(win, doc){ return {
 
                 frame++;
             }, 150 );
-        });
+        }, false);
 
         img.src = 'detective.png';
     },
@@ -151,7 +151,7 @@ var EXAMPLES = (function(win, doc){ return {
                 
                 frame++;
             }, 150 );
-        });
+        }, false);
 
         img.src = 'detective.png';
     },
